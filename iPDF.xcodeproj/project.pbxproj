@@ -22,6 +22,12 @@
 		FA2B36CE28B916A50021731B /* MyFilesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B36CD28B916A50021731B /* MyFilesVC.swift */; };
 		FA2B36D128B917D20021731B /* PDFViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B36D028B917D20021731B /* PDFViewerVC.swift */; };
 		FA2B36D428B918B00021731B /* ToolsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B36D328B918B00021731B /* ToolsVC.swift */; };
+		FAB594D728BA01BD002D3916 /* MODocument+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB594D528BA01BD002D3916 /* MODocument+CoreDataClass.swift */; };
+		FAB594D828BA01BD002D3916 /* MODocument+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB594D628BA01BD002D3916 /* MODocument+CoreDataProperties.swift */; };
+		FAB594DA28BA01DC002D3916 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB594D928BA01DC002D3916 /* CoreDataManager.swift */; };
+		FAB594DD28BA038D002D3916 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB594DC28BA038D002D3916 /* DocumentPicker.swift */; };
+		FAB594DF28BA03B0002D3916 /* DocumentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB594DE28BA03B0002D3916 /* DocumentDelegate.swift */; };
+		FAB594E128BA03C5002D3916 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB594E028BA03C5002D3916 /* Document.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		FA2B36CD28B916A50021731B /* MyFilesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFilesVC.swift; sourceTree = "<group>"; };
 		FA2B36D028B917D20021731B /* PDFViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerVC.swift; sourceTree = "<group>"; };
 		FA2B36D328B918B00021731B /* ToolsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsVC.swift; sourceTree = "<group>"; };
+		FAB594D528BA01BD002D3916 /* MODocument+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MODocument+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FAB594D628BA01BD002D3916 /* MODocument+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MODocument+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FAB594D928BA01DC002D3916 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FAB594DC28BA038D002D3916 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		FAB594DE28BA03B0002D3916 /* DocumentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDelegate.swift; sourceTree = "<group>"; };
+		FAB594E028BA03C5002D3916 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +86,8 @@
 		FA2B36A228B8FF250021731B /* iPDF */ = {
 			isa = PBXGroup;
 			children = (
+				FAB594D028BA005A002D3916 /* Core Data */,
+				FAB594DB28BA0368002D3916 /* DocPickerFiles */,
 				FA2B36CF28B917AC0021731B /* PDFViewerVC */,
 				FA2B36C528B914DE0021731B /* Base UI  */,
 				FA2B36BB28B9107C0021731B /* TabBar */,
@@ -140,6 +154,26 @@
 				FA2B36D328B918B00021731B /* ToolsVC.swift */,
 			);
 			path = ToolsVC;
+			sourceTree = "<group>";
+		};
+		FAB594D028BA005A002D3916 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				FAB594D528BA01BD002D3916 /* MODocument+CoreDataClass.swift */,
+				FAB594D628BA01BD002D3916 /* MODocument+CoreDataProperties.swift */,
+				FAB594D928BA01DC002D3916 /* CoreDataManager.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		FAB594DB28BA0368002D3916 /* DocPickerFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FAB594DC28BA038D002D3916 /* DocumentPicker.swift */,
+				FAB594DE28BA03B0002D3916 /* DocumentDelegate.swift */,
+				FAB594E028BA03C5002D3916 /* Document.swift */,
+			);
+			path = DocPickerFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +248,9 @@
 			files = (
 				FA2B36C728B915060021731B /* BaseTableViewCell.swift in Sources */,
 				FA2B36D428B918B00021731B /* ToolsVC.swift in Sources */,
+				FAB594D728BA01BD002D3916 /* MODocument+CoreDataClass.swift in Sources */,
+				FAB594D828BA01BD002D3916 /* MODocument+CoreDataProperties.swift in Sources */,
+				FAB594DD28BA038D002D3916 /* DocumentPicker.swift in Sources */,
 				FA2B36CA28B9160E0021731B /* DocumentTVCell.swift in Sources */,
 				FA2B36BF28B912C90021731B /* ImgsAndClrs.swift in Sources */,
 				FA2B36C128B913BB0021731B /* Extensions.swift in Sources */,
@@ -222,9 +259,12 @@
 				FA2B36CC28B916460021731B /* MyFilesView.swift in Sources */,
 				FA2B36CE28B916A50021731B /* MyFilesVC.swift in Sources */,
 				FA2B36A428B8FF250021731B /* AppDelegate.swift in Sources */,
+				FAB594DF28BA03B0002D3916 /* DocumentDelegate.swift in Sources */,
 				FA2B36D128B917D20021731B /* PDFViewerVC.swift in Sources */,
 				FA2B36A628B8FF250021731B /* SceneDelegate.swift in Sources */,
+				FAB594DA28BA01DC002D3916 /* CoreDataManager.swift in Sources */,
 				FA2B36C328B913EC0021731B /* SetUIManager.swift in Sources */,
+				FAB594E128BA03C5002D3916 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

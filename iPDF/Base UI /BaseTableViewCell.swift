@@ -14,16 +14,16 @@ class BaseTableViewCell: UITableViewCell {
     var dateLbl = UILabel()
     var thumbnailImgVW = UIImageView()
     
-//    func fillCellBy(document: MODocument) {
-//        fileNameLbl.text = document.fileName
-//        sizeLbl.text = "\(document.size) KB"
-//        dateLbl.text = document.editDate
-//
-//        guard let url = URL(string: document.fileURL!) else { return }
-//       let image = thumbnailFromPdf(withUrl: url,
-//                                                pageNumber: 1,
-//                                                width: 65)
-//      self.thumbnailImgVW.image = image
-//    }
+    func fillCellBy(document: MODocument) {
+        fileNameLbl.text = document.fileName
+        sizeLbl.text = "\(document.size) KB"
+        dateLbl.text = document.editDate
+
+        guard let url = URL(string: document.fileURL!) else { return }
+       let image = thumbnailFromPdf(withUrl: url,
+                                                pageNumber: 1,
+                                                width: 65)
+      self.thumbnailImgVW.image = image
+    }
 }
 
