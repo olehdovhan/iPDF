@@ -22,6 +22,11 @@
 		FA2B36CE28B916A50021731B /* MyFilesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B36CD28B916A50021731B /* MyFilesVC.swift */; };
 		FA2B36D128B917D20021731B /* PDFViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B36D028B917D20021731B /* PDFViewerVC.swift */; };
 		FA2B36D428B918B00021731B /* ToolsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B36D328B918B00021731B /* ToolsVC.swift */; };
+		FA68A52428BDC05F0046E351 /* ToolsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68A52328BDC05F0046E351 /* ToolsModel.swift */; };
+		FA68A52728BDC2810046E351 /* ToolsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68A52628BDC2810046E351 /* ToolsTVCell.swift */; };
+		FA68A52928BDC2EC0046E351 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68A52828BDC2EC0046E351 /* ToolsView.swift */; };
+		FA68A52C28BDC4490046E351 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68A52B28BDC4490046E351 /* Tools.swift */; };
+		FA78883928BBB9FA009BEEE7 /* ToolsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78883828BBB9FA009BEEE7 /* ToolsHeaderView.swift */; };
 		FAB594D728BA01BD002D3916 /* MODocument+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB594D528BA01BD002D3916 /* MODocument+CoreDataClass.swift */; };
 		FAB594D828BA01BD002D3916 /* MODocument+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB594D628BA01BD002D3916 /* MODocument+CoreDataProperties.swift */; };
 		FAB594DA28BA01DC002D3916 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB594D928BA01DC002D3916 /* CoreDataManager.swift */; };
@@ -48,6 +53,11 @@
 		FA2B36CD28B916A50021731B /* MyFilesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFilesVC.swift; sourceTree = "<group>"; };
 		FA2B36D028B917D20021731B /* PDFViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerVC.swift; sourceTree = "<group>"; };
 		FA2B36D328B918B00021731B /* ToolsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsVC.swift; sourceTree = "<group>"; };
+		FA68A52328BDC05F0046E351 /* ToolsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsModel.swift; sourceTree = "<group>"; };
+		FA68A52628BDC2810046E351 /* ToolsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsTVCell.swift; sourceTree = "<group>"; };
+		FA68A52828BDC2EC0046E351 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
+		FA68A52B28BDC4490046E351 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		FA78883828BBB9FA009BEEE7 /* ToolsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsHeaderView.swift; sourceTree = "<group>"; };
 		FAB594D528BA01BD002D3916 /* MODocument+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MODocument+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FAB594D628BA01BD002D3916 /* MODocument+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MODocument+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FAB594D928BA01DC002D3916 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -86,6 +96,7 @@
 		FA2B36A228B8FF250021731B /* iPDF */ = {
 			isa = PBXGroup;
 			children = (
+				FA68A52A28BDC42F0046E351 /* Tools */,
 				FAB594D028BA005A002D3916 /* Core Data */,
 				FAB594DB28BA0368002D3916 /* DocPickerFiles */,
 				FA2B36CF28B917AC0021731B /* PDFViewerVC */,
@@ -151,9 +162,29 @@
 		FA2B36D228B9181A0021731B /* ToolsVC */ = {
 			isa = PBXGroup;
 			children = (
+				FA68A52528BDC24E0046E351 /* ToolsTVCell */,
+				FA68A52328BDC05F0046E351 /* ToolsModel.swift */,
 				FA2B36D328B918B00021731B /* ToolsVC.swift */,
+				FA78883828BBB9FA009BEEE7 /* ToolsHeaderView.swift */,
+				FA68A52828BDC2EC0046E351 /* ToolsView.swift */,
 			);
 			path = ToolsVC;
+			sourceTree = "<group>";
+		};
+		FA68A52528BDC24E0046E351 /* ToolsTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA68A52628BDC2810046E351 /* ToolsTVCell.swift */,
+			);
+			path = ToolsTVCell;
+			sourceTree = "<group>";
+		};
+		FA68A52A28BDC42F0046E351 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				FA68A52B28BDC4490046E351 /* Tools.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		FAB594D028BA005A002D3916 /* Core Data */ = {
@@ -247,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2B36C728B915060021731B /* BaseTableViewCell.swift in Sources */,
+				FA78883928BBB9FA009BEEE7 /* ToolsHeaderView.swift in Sources */,
 				FA2B36D428B918B00021731B /* ToolsVC.swift in Sources */,
 				FAB594D728BA01BD002D3916 /* MODocument+CoreDataClass.swift in Sources */,
 				FAB594D828BA01BD002D3916 /* MODocument+CoreDataProperties.swift in Sources */,
@@ -258,8 +290,12 @@
 				FA2B36BD28B910AE0021731B /* TabBarController.swift in Sources */,
 				FA2B36CC28B916460021731B /* MyFilesView.swift in Sources */,
 				FA2B36CE28B916A50021731B /* MyFilesVC.swift in Sources */,
+				FA68A52728BDC2810046E351 /* ToolsTVCell.swift in Sources */,
 				FA2B36A428B8FF250021731B /* AppDelegate.swift in Sources */,
+				FA68A52C28BDC4490046E351 /* Tools.swift in Sources */,
+				FA68A52928BDC2EC0046E351 /* ToolsView.swift in Sources */,
 				FAB594DF28BA03B0002D3916 /* DocumentDelegate.swift in Sources */,
+				FA68A52428BDC05F0046E351 /* ToolsModel.swift in Sources */,
 				FA2B36D128B917D20021731B /* PDFViewerVC.swift in Sources */,
 				FA2B36A628B8FF250021731B /* SceneDelegate.swift in Sources */,
 				FAB594DA28BA01DC002D3916 /* CoreDataManager.swift in Sources */,

@@ -10,6 +10,8 @@ import Foundation
 enum Images: String {
     case mainLogo, tabMyFiles, tabTools, tabAccount, tabSelectedMyFiles, tabSelectedTools
     case threeVerticalDots, greenPlusBtn
+    case merge, combineReorder, alternateMix
+    case grid
 }
 
 enum Colors: String {
