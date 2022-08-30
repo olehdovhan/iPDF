@@ -55,7 +55,7 @@ extension ToolsVC: UITableViewDelegate, UITableViewDataSource {
       
         guard let toolCase = Tools(rawValue: ToolsModel.tools[indexPath.row].name) else { return }
            
-            let vc = UIViewController()//SelectFilesVC(tool: toolCase)
+            let vc = SelectFilesVC(tool: toolCase)
         
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true) { }
