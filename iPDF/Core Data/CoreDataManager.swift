@@ -45,6 +45,29 @@ class CoreDataManager {
         return moStoredDocs
     }
     
+    func deleteMODocs(_ nameArray: [String]) {
+        let fetchRequest: NSFetchRequest<MODocument> = MODocument.fetchRequest()
+        do {
+            let results = try context.fetch(fetchRequest)
+            guard results.first != nil else { return }
+            for name in nameArray {
+                let object = results.filter{ $0.fileName == name}
+                if let doc = object.first {
+                    context.delete(doc)
+                }
+            }
+            
+            do{
+                try self.context.save()
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+
+    }
+    
     static var shared: CoreDataManager = {
         let instance = CoreDataManager()
         return instance

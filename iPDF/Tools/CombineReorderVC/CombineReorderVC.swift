@@ -86,6 +86,7 @@ extension CombineReorderVC: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CombineReorderCell.id,
                                                       for: indexPath) as! CombineReorderCell
         
@@ -117,11 +118,9 @@ extension CombineReorderVC {
     @objc func selectPage(_ sender: UIButton) {
         sender.isSelected.toggle()
         manager.selectPage(sender)
-        
     }
     
     @objc func deleteModels() {
-        
         manager.deletePages()
         collectionView.reloadData()
     }

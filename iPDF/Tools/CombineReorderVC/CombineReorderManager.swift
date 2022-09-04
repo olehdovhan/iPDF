@@ -26,6 +26,7 @@ class CombineReorderManager: CombineReorderProtocol {
     var fileIndices: [Int]
     var selectedFiles = [CombineReorderModel]()
     var tempDocuments = [PDFDocument]()
+    var tempNames = [String]()
     var uniqueName: String {
         let timeInt = Date().timeIntervalSince1970
         let intTime = Int(timeInt)
@@ -52,10 +53,36 @@ class CombineReorderManager: CombineReorderProtocol {
         }
     }
     
+    func deleteFiles(_ fileToDelete: String) {
+            let fName = fileToDelete.getFileName()
+            let fExtension = fileToDelete.getFileExtension()
+            
+            let fURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            
+        let deleteAtURL = fURL.appendingPathComponent(fName).appendingPathExtension("pdf")
+            
+            do {
+                try FileManager.default.removeItem(at: deleteAtURL)
+                print("Image has been deleted")
+            } catch {
+                print(error)
+            }
+        }
+    
     func finalSave() {
+        
         let doc =  FileSaver.shared.createPDFDoc(from: pageModels.map({$0.page}))
         FileSaver.shared.fileExistsAtPath(name: "Combined.pdf", document: doc)
-        
+        for name in tempNames {
+            var nam = name
+            nam.removeLast()
+            nam.removeLast()
+            nam.removeLast()
+            nam.removeLast()
+            deleteFiles(nam)
+            
+        }
+        CoreDataManager.shared.deleteMODocs(tempNames)
     }
     
     func createfirstDoc() -> PDFDocument? {
@@ -76,7 +103,9 @@ class CombineReorderManager: CombineReorderProtocol {
             }
         }
         let doc =  FileSaver.shared.createPDFDoc(from: pageModels.map({$0.page}))
-        FileSaver.shared.fileExistsAtPath(name: uniqueName, document: doc)
+        let name = uniqueName
+        tempNames.append(name)
+        FileSaver.shared.fileExistsAtPath(name: name, document: doc)
         return doc
     }
     
@@ -94,7 +123,9 @@ class CombineReorderManager: CombineReorderProtocol {
             }
         }
         let pdfDoc =  FileSaver.shared.createPDFDoc(from: pageModels.map({$0.page}))
-        FileSaver.shared.fileExistsAtPath(name: uniqueName, document: pdfDoc)
+        let name = uniqueName
+        tempNames.append(name)
+        FileSaver.shared.fileExistsAtPath(name: name, document: pdfDoc)
         tempDocuments.append(pdfDoc)
         selectedModelIndex += 1
         completion()
@@ -102,7 +133,9 @@ class CombineReorderManager: CombineReorderProtocol {
     
     func addBlankPage() {
         let blankPdfDoc = PDFDocument()
-        FileSaver.shared.fileExistsAtPath(name: uniqueName, document: blankPdfDoc)
+        let name = uniqueName
+        tempNames.append(name)
+        FileSaver.shared.fileExistsAtPath(name: name, document: blankPdfDoc)
         guard let url = lastFileUrl,
                let doc = PDFDocument(url: url),
                 let page = doc.page(at: 0) else { return }
@@ -117,19 +150,23 @@ class CombineReorderManager: CombineReorderProtocol {
         let newDoc = FileSaver.shared.createPDFDoc(from: pagesArray)
         tempDocuments.append(newDoc)
         selectedModelIndex += 1
-        FileSaver.shared.fileExistsAtPath(name: uniqueName, document: newDoc)
+        let name1 = uniqueName
+        tempNames.append(name1)
+        FileSaver.shared.fileExistsAtPath(name: name1, document: newDoc)
     }
 
     
     func reorderPages() {
         selectedFiles.removeAll()
-       pageModels = reverseOrder(array: pageModels)
+        pageModels = reverseOrder(array: pageModels)
         
         let pagesArray = pageModels.map({ $0.page})
         let newDoc = FileSaver.shared.createPDFDoc(from: pagesArray)
         tempDocuments.append(newDoc)
         selectedModelIndex += 1
-        FileSaver.shared.fileExistsAtPath(name: uniqueName, document: newDoc)
+        let name = uniqueName
+        tempNames.append(name)
+        FileSaver.shared.fileExistsAtPath(name: name, document: newDoc)
     }
     
     func reverseOrder<T>(array: [T]) -> [T] {
@@ -182,7 +219,9 @@ class CombineReorderManager: CombineReorderProtocol {
         let newDoc = FileSaver.shared.createPDFDoc(from: pagesArray)
         tempDocuments.append(newDoc)
         selectedModelIndex += 1
-        FileSaver.shared.fileExistsAtPath(name: uniqueName, document: newDoc)
+        let name = uniqueName
+        tempNames.append(name)
+        FileSaver.shared.fileExistsAtPath(name: name, document: newDoc)
 //        urls.append(lastFileUrl)
         
         
@@ -200,7 +239,9 @@ class CombineReorderManager: CombineReorderProtocol {
         let newDoc = FileSaver.shared.createPDFDoc(from: pagesArray)
         tempDocuments.append(newDoc)
         selectedModelIndex += 1
-        FileSaver.shared.fileExistsAtPath(name: uniqueName, document: newDoc)
+        let name = uniqueName
+        tempNames.append(name)
+        FileSaver.shared.fileExistsAtPath(name: name, document: newDoc)
 //        urls.append(lastFileUrl)
         selectedFiles.removeAll()
        // tempSave()

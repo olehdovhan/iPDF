@@ -41,6 +41,15 @@ extension String {
             return ""
         }
     }
+ 
+        func getFileName() -> String {
+            return URL(fileURLWithPath: self).deletingPathExtension().lastPathComponent
+        }
+        
+        func getFileExtension() -> String {
+            return URL(fileURLWithPath: self).pathExtension
+        }
+    
 }
 
 extension UIImageView {
