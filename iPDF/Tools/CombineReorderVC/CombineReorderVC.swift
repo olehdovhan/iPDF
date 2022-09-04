@@ -44,8 +44,8 @@ class CombineReorderVC: BaseViewController, DocumentDelegate {
         vw.reorderBarBtn.addTarget(self, action: #selector(reorder), for: .touchUpInside)
         vw.blancPageBarBtn.addTarget(self, action: #selector(blankPage), for: .touchUpInside)
         vw.addFileBarBtn.addTarget(self, action: #selector(addFiles), for: .touchUpInside)
-//        vw.redoBtn.addTarget(self, action: #selector(undoRedo(sender:)), for: .touchUpInside)
-//        vw.undoBtn.addTarget(self, action: #selector(undoRedo(sender:)), for: .touchUpInside)
+        vw.redoBtn.addTarget(self, action: #selector(undoRedo(sender:)), for: .touchUpInside)
+        vw.undoBtn.addTarget(self, action: #selector(undoRedo(sender:)), for: .touchUpInside)
       }
 
     private func collectionViewCreator() {
@@ -153,7 +153,7 @@ extension CombineReorderVC {
                 return }
         // отпринть selectedModelIndex по построению
           manager.selectedModelIndex -= 1
-          manager.fillPageModels()
+//          manager.fillPageModels()
           collectionView.reloadData()
             
         case 1:
@@ -161,6 +161,8 @@ extension CombineReorderVC {
                 sender.isSelected = false
                 return }
             manager.selectedModelIndex += 1
+//            manager.fillPageModels()
+            collectionView.reloadData()
             
         default: break
         }

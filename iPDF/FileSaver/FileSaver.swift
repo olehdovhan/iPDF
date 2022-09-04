@@ -39,12 +39,26 @@ class FileSaver {
                 .appendingPathComponent("\(name).pdf") else { return }
         do {
             try data.write(to: path)
+            // BookMark
+            if let url = URL(string: path.absoluteString) {
+            // Convert URL to bookmark
+                let bookmarkData = try url.bookmarkData(options: .minimalBookmark, includingResourceValuesForKeys: nil)
+                
+                // Save the bookmark into a file (the name of the file is a UUID)
+                let uuid = UUID().uuidString
+                try bookmarkData.write(to: getAppSandboxDirectory().appendingPathComponent(uuid))
+            }
+            
             CoreDataManager.shared.createDocEntity(name: "\(name).pdf",
                                                    size: sizePerKB(url: path),
                                                    editDate: stringDate(url: path),
                                                    fileUrl: path.absoluteString)
         } catch {}
     }
+    
+    private func getAppSandboxDirectory() -> URL {
+           FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+       }
     
     func fileExistsAtPath(name: String, document: PDFDocument) {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String

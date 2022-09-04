@@ -29,12 +29,18 @@ class CombineReorderCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         selectFileBtn.isSelected = false
+        thumbnailImgVW.image = nil
+        numberLbl.text = nil
         fillCellBy(document: document,
                    url: url11,
                    number: number)
     }
     
     func fillCellBy(document: PDFPage, url: URL, number: Int) {
+        selectFileBtn.isSelected = false
+        thumbnailImgVW.image = nil
+        numberLbl.text = nil
+        self.document = document
         numberLbl.text = String(number)
         let image = thumbnailFromPdf(withUrl: url,
                                      pageNumber: number,
