@@ -43,7 +43,7 @@ class DocumentTVCell: BaseTableViewCell {
                     textColor: clr(color: .clrTitleMyFiles),
                     textAlignment: .left,
                     fontSize: 16,
-                    fontWeight: .regular)
+                    fontName: "Montserrat-Medium")
         
         // наполняй дату из документа
         ui.setLabel(label: dateLbl,
@@ -51,7 +51,7 @@ class DocumentTVCell: BaseTableViewCell {
                     textColor: clr(color: .clrGrayMyFiles),
                     textAlignment: .left,
                     fontSize: 13,
-                    fontWeight: .regular)
+                    fontName: "Montserrat-Medium")
         
         grayView.layer.backgroundColor = clr(color: .clrGrayMyFiles)?.cgColor
 
@@ -60,7 +60,7 @@ class DocumentTVCell: BaseTableViewCell {
                     textColor: clr(color: .clrGrayMyFiles),
                     textAlignment: .left,
                     fontSize: 13,
-                    fontWeight: .regular)
+                    fontName: "Montserrat-Medium")
         
         ui.setButton(button: threeDotsBtn,
                      view: contentView,

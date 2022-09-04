@@ -11,13 +11,13 @@ enum Images: String {
     case mainLogo, tabMyFiles, tabTools, tabAccount, tabSelectedMyFiles, tabSelectedTools
     case threeVerticalDots, greenPlusBtn
     case merge, combineReorder, alternateMix
-    case grid , refresh, emptyCheckMark, checkMark
+    case grid , refresh, emptyCheckMark, checkMark, checkMarkFill, congratulaion, dummyDocument, trashBtn, settingsBtn, undoLight, undoDark, redoLight, redoDark, delete, turn, addFile, blankPage, reorder
 }
 
 enum Colors: String {
-    case clrWhiteBack, clrPurpleTabTint, clrTitleMyFiles, clrGrayMyFiles, clrTextGray,alphaWhite
+    case clrWhiteBack, clrGreenTabTint, clrTitleMyFiles, clrGrayMyFiles, clrTextGray,alphaWhite
     //Shadows
     case clrShadowDocument, clrShadowButton, clrShadowBar, clrShadowSection, clrButtonSelected, clrSegmentedShadow
-    case clrLineGray
+    case clrLineGray, clrSegmentedText, clrSingleDocNumber, clrBackAnimateBlue, clrNumberArea, clrSegmentedBackground, clrSingleDocPlusMinus, clrRedoUndoArea, clrBarButtonText
   
 }

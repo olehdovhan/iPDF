@@ -39,14 +39,14 @@ class FileTableViewCell:  BaseTableViewCell {
                     textColor: clr(color: .clrTitleMyFiles),
                     textAlignment: .left,
                     fontSize: wRatio(cW: 16),
-                    fontWeight: .regular)
+                    fontName: Fonts.medium)
         
         ui.setLabel(label: dateLbl,
                     view: self,
                     textColor: clr(color: .clrGrayMyFiles),
                     textAlignment: .left,
                     fontSize: 13,
-                    fontWeight: .regular)
+                    fontName: Fonts.medium)
         
         grayView.layer.backgroundColor = clr(color: .clrGrayMyFiles)?.cgColor
         
@@ -55,7 +55,7 @@ class FileTableViewCell:  BaseTableViewCell {
                     textColor: clr(color: .clrGrayMyFiles),
                     textAlignment: .left,
                     fontSize: 13,
-                    fontWeight: .regular)
+                    fontName: Fonts.medium)
         
         ui.setButton(button: selectFileBtn,
                      view: contentView,

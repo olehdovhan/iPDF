@@ -44,7 +44,7 @@ class ToolsTVCell: UITableViewCell {
                     textColor: .black,
                     textAlignment: .left,
                     fontSize: 16,
-                    fontWeight: .regular)
+                    fontName: "Montserrat-Medium")
 
         let conf = UIImage.SymbolConfiguration(hierarchicalColor: .gray)
         let image = UIImage(systemName: "chevron.right",

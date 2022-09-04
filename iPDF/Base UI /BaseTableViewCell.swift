@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PDFKit
 
 class BaseTableViewCell: UITableViewCell {
 
@@ -19,10 +20,17 @@ class BaseTableViewCell: UITableViewCell {
         sizeLbl.text = "\(document.size) KB"
         dateLbl.text = document.editDate
 
-        guard let url = URL(string: document.fileURL!) else { return }
+        
+       
+        guard let url = URL(string: document.fileURL!),
+              let doc = PDFDocument(url: url)
+                                 else { return }
+
+//       let image = makeThumbnail(pdfDocument: doc, page: 0)
        let image = thumbnailFromPdf(withUrl: url,
                                                 pageNumber: 1,
                                                 width: 65)
+        
       self.thumbnailImgVW.image = image
     }
 }

@@ -4,17 +4,15 @@
 //
 //  Created by O l e h on 26.08.2022.
 //
-
 import UIKit
 
-class MyFilesVC: UIViewController, DocumentDelegate{
+class MyFilesVC: UIViewController, DocumentDelegate {
 
     func didPickDocuments(pickDocuments: [Document]?) {
     vw.tableView.reloadData()
     }
-    
+
     var vw: MyFilesView!
-    
     var documentPicker: DocumentPicker!
     
     override func viewDidLoad() {
@@ -55,13 +53,13 @@ extension MyFilesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DocumentTVCell.id,
                                                  for: indexPath) as! DocumentTVCell
-        guard let docs = CoreDataManager.shared.getMODocs() else { return cell}
+        guard let docs = CoreDataManager.shared.getMODocs() else { return cell }
                 cell.fillCellBy(document: docs[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        print("test")
         guard let docs = CoreDataManager.shared.getMODocs(),
                let string = docs[indexPath.row].fileURL,
                let url = URL(string: string )  else { return }
@@ -70,7 +68,6 @@ extension MyFilesVC: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
 
 extension MyFilesVC: UIDocumentPickerDelegate,UINavigationControllerDelegate {
     
@@ -87,4 +84,3 @@ extension MyFilesVC: UIDocumentPickerDelegate,UINavigationControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
 }
-

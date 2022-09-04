@@ -25,15 +25,15 @@ class ToolsHeaderView: UIView {
     
     override func draw(_ rect: CGRect) {
         layer.backgroundColor = UIColor.white.cgColor
-        lineVw.layer.backgroundColor = clr(color: .clrPurpleTabTint)?.cgColor
+        lineVw.layer.backgroundColor = clr(color: .clrGreenTabTint)?.cgColor
         
         ui.setLabel(label: titleLbl,
                     view: self,
                     labelText: text,
-                    textColor: clr(color: .clrPurpleTabTint),
+                    textColor: clr(color: .clrGreenTabTint),
                     textAlignment: .left,
                     fontSize: 13,
-                    fontWeight: .semibold)
+                    fontName: "Montserrat-Bold")
         
         ui.lblLayout(label: titleLbl,
                      view: self,

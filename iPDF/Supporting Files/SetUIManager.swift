@@ -64,13 +64,12 @@ struct SetUIManager {
         if fontName != nil, fontSize != nil {
             label.font = UIFont(name: fontName!, size: fontSize!)
         }
-        if fontSize != nil {
+        if fontSize != nil, fontWeight != nil {
             label.font = UIFont.systemFont(ofSize: fontSize!, weight: fontWeight!)
         }
         if lines != nil {
             label.numberOfLines = lines!
         }
-        
     }
     
     func setButton(button: UIButton,
@@ -98,7 +97,7 @@ struct SetUIManager {
         if fontName != nil, fontSize != nil {
             button.titleLabel?.font = UIFont(name: fontName!, size: fontSize!)
         }
-        if fontSize != nil {
+        if fontSize != nil, fontWeight != nil {
             button.titleLabel?.font = UIFont.systemFont(ofSize: fontSize!, weight: fontWeight!)
         }
         guard controlState != nil else { return }

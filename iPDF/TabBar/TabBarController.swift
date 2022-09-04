@@ -19,12 +19,12 @@ class TabBarController: UITabBarController {
         UITabBar.appearance().shadowImage = UIImage()
         UITabBar.appearance().clipsToBounds = true
         
-        viewControllers = [MyFilesVC(),ToolsVC()]
+        viewControllers = [UINavigationController(rootViewController: MyFilesVC()),
+                           UINavigationController(rootViewController: ToolsVC())]
         setUI()
         
         filesBtn.addTarget(self, action: #selector(filesAction(sender:)), for: .touchUpInside)
         toolsBtn.addTarget(self, action: #selector(toolsAction(sender:)), for: .touchUpInside)
-        
     }
     
     func setUI() {

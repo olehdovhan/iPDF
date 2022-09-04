@@ -40,7 +40,7 @@ class MyFilesView: UIView {
                     textColor: clr(color: .clrTitleMyFiles),
                     textAlignment: .left,
                     fontSize: 24,
-                    fontWeight: .bold)
+                    fontName: "Montserrat-Bold")
   
         
         searchBar.placeholder = "Search documents"

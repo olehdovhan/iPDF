@@ -119,12 +119,17 @@ extension UIView {
         let ratio = w / value
         return ratio
     }
+    func makeThumbnail(pdfDocument: PDFDocument?, page: Int) -> UIImage? {
+            return pdfDocument?.page(at: page)?.thumbnail(of: CGSize(width: 40, height: 40), for: .artBox)
+    }
     
     func thumbnailFromPdf(withUrl url: URL, pageNumber: Int = 1, width: CGFloat = 240) -> UIImage? {
+        
         guard
             let pdf = CGPDFDocument(url as CFURL),
             let page = pdf.page(at: pageNumber)
         else { return nil }
+        
 
         var pageRect = page.getBoxRect(.mediaBox)
         let pdfScale = width / pageRect.size.width

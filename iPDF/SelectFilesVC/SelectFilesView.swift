@@ -26,16 +26,16 @@ class SelectFilesView: UIView {
     }
 
     func setUI() {
-        let conf = UIImage.SymbolConfiguration(hierarchicalColor: clr(color: .clrPurpleTabTint)!)
+        let conf = UIImage.SymbolConfiguration(hierarchicalColor: clr(color: .clrGreenTabTint)!)
         let img = UIImage(systemName: "chevron.left",
                           withConfiguration: conf)
         
         ui.setButton(button: backBtn,
                      view: self,
                      buttonText: "Back",
-                     textColor: clr(color: .clrPurpleTabTint),
+                     textColor: clr(color: .clrGreenTabTint),
+                     fontName: Fonts.semibold,
                      fontSize: 16,
-                     fontWeight: .semibold,
                      image: img,
                      controlState: .normal)
         
@@ -49,7 +49,7 @@ class SelectFilesView: UIView {
                     textColor: clr(color: .clrTitleMyFiles),
                     textAlignment: .center,
                     fontSize: wRatio(cW: 16),
-                    fontWeight: .semibold)
+                    fontName: Fonts.semibold)
         
         ui.setButton(button: refreshBtn,
                      view: self,
@@ -61,8 +61,8 @@ class SelectFilesView: UIView {
                     textColor: .white,
                     textAlignment: .center,
                     fontSize: 13,
-                    fontWeight: .semibold,
-                    backgroundColor: clr(color: .clrPurpleTabTint))
+                    fontName: Fonts.semibold,
+                    backgroundColor: clr(color: .clrGreenTabTint))
         
         searchBar.placeholder = "Search documents"
         searchBar.searchBarStyle = .minimal
@@ -71,7 +71,7 @@ class SelectFilesView: UIView {
         
         //plus.circle - системное название картинки
        // UIImage.SymbolConfiguration(scale: .large)
-        let configuration = UIImage.SymbolConfiguration(hierarchicalColor: clr(color: .clrPurpleTabTint)!)
+        let configuration = UIImage.SymbolConfiguration(hierarchicalColor: clr(color: .clrGreenTabTint)!)
         
         let circleImg = UIImage(systemName: "plus.circle",
                                 withConfiguration: configuration)
@@ -86,9 +86,9 @@ class SelectFilesView: UIView {
                      buttonText: "Add Files",
                      backgroundColor: .white,
                      cornerRadius: 10,
-                     textColor: clr(color: .clrPurpleTabTint),
+                     textColor: clr(color: .clrGreenTabTint),
+                     fontName: Fonts.semibold,
                      fontSize: 16,
-                     fontWeight: .semibold,
                      image: circleImg,
                      controlState: .normal)
         addFilesBtn.layer.masksToBounds = false
@@ -105,8 +105,8 @@ class SelectFilesView: UIView {
                      backgroundColor: clr(color: .clrLineGray),
                      cornerRadius: 10,
                      textColor: .white,
+                     fontName: Fonts.semibold,
                      fontSize: 16,
-                     fontWeight: .semibold,
                      controlState: .normal)
         nextBtn.isUserInteractionEnabled = false
         

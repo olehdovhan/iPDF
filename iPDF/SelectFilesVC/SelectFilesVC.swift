@@ -23,7 +23,7 @@ class SelectFilesVC: UIViewController {
                 vw.nextBtn.backgroundColor = vw.clr(color: .clrLineGray)
                 vw.nextBtn.isUserInteractionEnabled = false
                 return }
-            vw.nextBtn.backgroundColor = vw.clr(color: .clrPurpleTabTint)
+            vw.nextBtn.backgroundColor = vw.clr(color: .clrGreenTabTint)
             vw.nextBtn.isUserInteractionEnabled = true
         }
     }
@@ -65,23 +65,21 @@ class SelectFilesVC: UIViewController {
     }
     
     @objc private func showTool(){
-//        let vc: BaseViewController!
-//
-//        switch toolIdentifier {
-//        case .alternateMix:
-//            vc = AlternateMixVC()
-//        case .merge:
-//            vc = MergeVC()
-//        case .combineReorder:
-//            vc = CombineReorderVC()
-//        case .compress:
-//            vc = CompressVC()
-//        }
-//        vc.fileIndices = selectedIndices
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc,
-//                animated: true,
-//                completion: nil)
+        let vc: BaseViewController!
+
+        switch toolIdentifier {
+        case .alternateMix:
+            vc = AlternateMixVC()
+        case .merge:
+            vc = MergeVC()
+        case .combineReorder:
+            vc = CombineReorderVC()
+        }
+        vc.fileIndices = selectedIndices
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,
+                animated: true,
+                completion: nil)
     }
     
     @objc func selectDocs(sender: UIButton) {

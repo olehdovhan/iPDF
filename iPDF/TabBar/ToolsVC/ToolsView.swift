@@ -7,6 +7,12 @@
 
 import UIKit
 
+class Fonts {
+    static let medium =   "Montserrat-Medium"
+    static let semibold = "Montserrat-SemiBold"
+    static let bold =     "Montserrat-Bold"
+}
+
 class ToolsView: UIView {
     
     var titleLbl = UILabel()
@@ -38,7 +44,7 @@ class ToolsView: UIView {
                     textColor: clr(color: .clrTitleMyFiles),
                     textAlignment: .left,
                     fontSize: 24,
-                    fontWeight: .bold)
+                    fontName: Fonts.bold)
 
         searchBar.placeholder = "Search tools"
         searchBar.searchBarStyle = .minimal
